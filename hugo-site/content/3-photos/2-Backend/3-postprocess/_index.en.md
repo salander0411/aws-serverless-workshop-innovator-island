@@ -39,11 +39,20 @@ After you will test with the sample image, and then perform a test from the fron
 
 ![Module 3 - Open code panel](../../images/3-photos-composite4.png)
 
-5. Go back to your browser tab with Cloud9 running. If you need to re-launch Cloud9, from the AWS Management Console, select **Services** then select [**Cloud9**](https://console.aws.amazon.com/cloud9) under *Developer Tools*. **Make sure your region is correct.**
+5. Now please implement the codes. It should save the photo object information into the DynamoDB table and send a message to the IoT topic so the frontend application is notified. 
 
-6. Copy the code from `3-postprocess/app.js` onto the clipboard and paste into the `index.js` tab in the Lambda function, overwriting the existing content:
+   The dynamoDB scheme is listed below. The name of DynamoDB and iot endpoint could be found below.
+   ```
+                'partitionKey': 'user-photo',
+                'sortKey': new Date().toISOString().replace(/T/, ' ').replace(/\..+/, ''),
+                'objectKey': params.ObjectKey,
+                'URL': params.URL  
 
-7. Select *Deploy* in the *Function Code* panel to save the changes and deploy the function.
+   ```
+
+
+
+6. Select *Deploy* in the *Function Code* panel to save the changes and deploy the function.
 
 ![Module 3 - Paste code](../../images/3-photos-composite5.png)
 

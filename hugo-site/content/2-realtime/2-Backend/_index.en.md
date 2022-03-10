@@ -74,15 +74,13 @@ Lambda functions that use arm64 architecture (AWS Graviton2 processor) can achie
 
 ![Module 2 - SNS completed](../images/2-realtime-lambda3.png)
 
-8. Back in the Cloud9 browser tab, in the left directory panel navigate to `theme-park-backend\2-realtime\app.js`. Double click to open the file and copy the contents onto the clipboard.
+Now it's your time to finish the codes. 
 
-9. Go back to the browser tab with the Lambda console. In the *Code source* card, open the `index.js` file. Paste the file contents in the clipboard into the `index.js` file, overwriting the existing content.
+This Lambda function code should **read the latest message from the SNS topic, writes it to the DynamoDB table, and then pushes the message to the frontend application via an IoT topic**.
 
-10. Above the *Code source* panel, select **Deploy** to save the changes and deploy the function.
+You could change the code runtime from NodeJS to python or other code language you are familiar with, by changing **Runtime settings** under the Code Tab.
 
-![Module 2 - Paste code](../images/2-realtime-lambda4.png)
-
-This Lambda function code reads the latest message from the SNS topic, writes it to the DynamoDB table, and then pushes the message to the frontend application via an IoT topic.
+The environment variables could be found below.
 
 ## Adding environment variables
 
